@@ -4,7 +4,23 @@ author: "YuechenLiu"
 date: "9/18/2020"
 output: github_document
 ---
+
+```{r}
+library(tidyverse)
+```
 ###HW1 Problem1
+Create a data frame with the specified elements
+
+```{r}
+prob1_df = 
+  tibble(
+    samp = rnorm(10),
+    samp_gt_0 = samp > 0,
+    char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+    factor_vec = factor(c("low", "low", "low", "mod", "mod", "mod", "mod", "high", "high", "high"))
+  )
+```
+
 
 ###HW1 Problem2
 ```{r}
