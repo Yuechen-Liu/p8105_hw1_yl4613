@@ -1,0 +1,19 @@
+---
+title: "HW1"
+author: "YuechenLiu"
+date: "9/18/2020"
+output: github_document
+---
+###HW1 Problem1
+
+###HW1 Problem2
+```{r}
+data("penguins", package = "palmerpenguins")
+nrow(penguins)
+ncol(penguins)
+mean(penguins$flipper_length_mm, na.rm=TRUE)
+###inline description: the data is about informations of penguins, important variable include: "species" "island" "bill_length_mm" "bill_depth_mm" "flipper_length_mm" "body_mass_g"  "sex" "year". The dataset has 344 rows and 8 columns. The mean flipper length is 200.9152mm.
+library(ggplot2)
+ggplot(penguins,aes(x=bill_length_mm, y=flipper_length_mm, na.rm = TRUE, color=species))+geom_point()
+ggsave(file="penguins.png")
+```
