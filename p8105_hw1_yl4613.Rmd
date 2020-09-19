@@ -21,6 +21,26 @@ prob1_df =
   )
 ```
 
+Take the mean of each variable in my data frame/
+
+```{r}
+mean(pull(prob1_df, samp))
+mean(pull(prob1_df, samp_gt_0))
+mean(pull(prob1_df, char_vec))
+mean(pull(prob1_df, factor_vec))
+```
+
+```{r}
+as.numeric(pull(prob1_df, samp))
+as.numeric(pull(prob1_df, samp_gt_0))
+as.numeric(pull(prob1_df, char_vec))
+as.numeric(pull(prob1_df, factor_vec))
+```
+
+```{r}
+as.numeric(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
+
+```
 
 ###HW1 Problem2
 ```{r}
@@ -29,7 +49,6 @@ nrow(penguins)
 ncol(penguins)
 mean(penguins$flipper_length_mm, na.rm=TRUE)
 ###inline description: the data is about informations of penguins, important variable include: "species" "island" "bill_length_mm" "bill_depth_mm" "flipper_length_mm" "body_mass_g"  "sex" "year". The dataset has 344 rows and 8 columns. The mean flipper length is 200.9152mm.
-library(ggplot2)
 ggplot(penguins,aes(x=bill_length_mm, y=flipper_length_mm, na.rm = TRUE, color=species))+geom_point()
 ggsave(file="penguins.png")
 ```
